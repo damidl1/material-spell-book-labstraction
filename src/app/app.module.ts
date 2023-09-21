@@ -7,6 +7,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -31,6 +32,7 @@ import { CardComponent } from './components/card/card.component';
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
+    MatSlideToggleModule,
     MatCardModule,
     HttpClientModule
   ],

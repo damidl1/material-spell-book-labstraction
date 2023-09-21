@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  isLightTheme: boolean = true;
+
+  changeTheme(){
+    this.isLightTheme = !this.isLightTheme;
+    document.body.classList.toggle('super-dark')
+  }
+
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Spell } from 'src/app/model/spell';
 import { SpellService } from 'src/app/services/spell/spell.service';
 
 @Component({
@@ -7,7 +9,10 @@ import { SpellService } from 'src/app/services/spell/spell.service';
   styleUrls: ['./detail.component.scss'],
 })
 export class DetailComponent implements OnInit {
-  constructor(public spellService: SpellService) {}
+
+  spellDetail?: Spell;
+
+  constructor(public spellService: SpellService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     // this.spellService.getSpellDetail()
@@ -16,12 +21,22 @@ export class DetailComponent implements OnInit {
     //   error: error => console.log(error)
     // })
 
-    const params = new URLSearchParams(window.location.search);
-    if (params.get('spell')) {
+    // const params = new URLSearchParams(window.location.search);
+    // if (params.get('spell')) {
+    //   this.spellService
+    //     .getSpellDetailWithIndex(params.get('spell')!)
+    //     .subscribe({
+    //       next: (detail) => console.log(detail),
+    //       error: (error) => console.log(error),
+    //     });
+    // }
+
+
+    if (this.route.snapshot.paramMap.get('index')) {
       this.spellService
-        .getSpellDetailWithIndex(params.get('spell')!)
+        .getSpellDetailWithIndex(this.route.snapshot.paramMap.get('index')!)
         .subscribe({
-          next: (detail) => console.log(detail),
+          next: (detail) => this.spellDetail = detail,
           error: (error) => console.log(error),
         });
     }
