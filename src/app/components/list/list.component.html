@@ -1,0 +1,4 @@
+<ol>
+  <app-card *ngFor="let spell of spells" [spellData]="spell" (spellSelected)="openDetail($event)"></app-card>
+</ol>
+

@@ -6,11 +6,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatCardModule} from '@angular/material/card';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { ListComponent } from './list/list.component';
-import { DetailComponent } from './detail/detail.component';
+import { ListComponent } from './components/list/list.component';
+import { DetailComponent } from './components/detail/detail.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CardComponent } from './components/card/card.component';
 
 
 @NgModule({
@@ -18,7 +21,8 @@ import { DetailComponent } from './detail/detail.component';
     AppComponent,
     HeaderComponent,
     ListComponent,
-    DetailComponent
+    DetailComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +30,9 @@ import { DetailComponent } from './detail/detail.component';
     BrowserAnimationsModule,
     MatButtonModule,
     MatIconModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatCardModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
